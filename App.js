@@ -153,14 +153,14 @@ export default function App() {
     console.log('OPENURL')
     getSerieData(netflixId)
     setShowRemote(true)
-    fetch(`http://192.168.8.152:5000/${netflixId}`)
+    fetch(`http://172.20.10.3:5000/${netflixId}`)
   }
 
   const keyCommand = (key) => {
     if (key == 'close') {
       setShowRemote(false)
     }
-    fetch(`http://192.168.8.152:5000/key-command/${key}`)
+    fetch(`http://172.20.10.3:5000/key-command/${key}`)
   }
 
   const toggleTitle = (typeChoice) => {

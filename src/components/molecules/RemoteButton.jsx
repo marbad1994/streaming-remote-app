@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, StyleSheet } from 'react-native';
-import ButtonIcon from '../atoms/ButtonIcon';
-import { keyCommand, IpContext } from '../../utils';
+import ButtonIcon from '@components/atoms/ButtonIcon';
+import { keyCommand, IpContext } from '@src/utils';
    
 const RemoteButton = ({keyStroke, iconName, IconLib}) => {
   const {ipAddress} = React.useContext(IpContext);

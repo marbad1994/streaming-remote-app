@@ -5,9 +5,9 @@ import {
   StyleSheet,
 } from 'react-native'
 
-import { IpContext, IpContextProvider } from './src/utils';
-import IpInputAlert from './src/components/Screens/IpInputAlert';
-import RemoteController from './src/components/Screens/RemoteController';
+import { IpContext, IpContextProvider } from '@src/utils';
+import IpInputAlert from '@components/screens/IpInputAlert';
+import RemoteController from '@components/screens/RemoteController';
 
 
 const App = () => {

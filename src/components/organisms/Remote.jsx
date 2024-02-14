@@ -1,6 +1,6 @@
 import React from 'react';
 import { View,StyleSheet } from 'react-native';
-import RemoteButton from '../molecules/RemoteButton';
+import RemoteButton from '@components/molecules/RemoteButton';
 import {
     Octicons,
     MaterialIcons,

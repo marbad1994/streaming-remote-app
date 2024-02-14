@@ -3,8 +3,8 @@ import { View, TouchableOpacity, StyleSheet} from 'react-native';
 import {
     MaterialCommunityIcons,
   } from '@expo/vector-icons'
-import Remote from '../organisms/Remote';
-import { keyCommand, IpContext } from '../../utils';
+import Remote from '@components/organisms/Remote';
+import { keyCommand, IpContext } from '@src/utils';
    
 const RemoteController = () => {
     const {ipAddress} = React.useContext(IpContext);

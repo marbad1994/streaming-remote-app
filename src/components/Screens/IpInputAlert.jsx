@@ -3,7 +3,7 @@ import {
     Alert
   } from 'react-native'
 
-import { IpContext } from '../../utils'
+import { IpContext } from '@src/utils'
 
 const IpInputAlert = () => {
     const {updateIpAddress} = useContext(IpContext);

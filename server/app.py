@@ -1,12 +1,11 @@
-from flask import Flask, render_template
-import webbrowser
+from flask import Flask
 from pynput.keyboard import Key, Controller
 from pynput.mouse import Button, Controller as Mouse
 from time import sleep
 from platform import system
 
 app = Flask(__name__)
-print(system)
+API_PREFIX = "/api/v1"
 ctrl = Key.ctrl if system() != "Darwin" else Key.cmd
 keys = {
     "space": [Key.space],
@@ -19,36 +18,12 @@ keys = {
 }
 mouse = Mouse()
 
-
-def play_on_start():
-    sleep(5)
-    mouse.position = (987, 484)
-    sleep(0.2)
-    for i in range(1):
-        mouse.press(Button.left)
-        mouse.release(Button.left)
-
-
-@app.route("/")
-def index():
-    return "START"
-
-
-@app.route("/<netflix_id>")
-def open_site(netflix_id):
-    url = "https://www.netflix.com/watch/" + netflix_id
-    webbrowser.open(url, new=1, autoraise=True)
-    play_on_start()
-    return "STARTED"
-
-
-@app.route("/key-command/<key>")
+@app.route(f"{API_PREFIX}/key-command/<key>")
 def key_command(key):
     if key == "sspace":
-        for i in range(1):
-            mouse.press(Button.left)
-            mouse.release(Button.left)
-            sleep(0.4)
+        mouse.press(Button.left)
+        sleep(0.4)
+        mouse.release(Button.left)
     if key in keys.keys():
         key = keys[key]
     else:
@@ -58,9 +33,6 @@ def key_command(key):
         keyboard.press(k)
     for k in key:
         keyboard.release(k)
-    print(key[0])
-    if key[0] == "refresh":
-        play_on_start()
     return "Success"
 
 

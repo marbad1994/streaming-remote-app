@@ -20,5 +20,5 @@ export const IpContextProvider = ({ children }) => {
 };
 
 export const keyCommand = (key, ipAddress) => {
-    fetch(`http://${ipAddress}:5000/api/v1/key-command/${key}`)
+    fetch(`http://${ipAddress}:4040/api/v1/key-command/${key}`)
 }

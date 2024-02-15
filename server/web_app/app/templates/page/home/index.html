@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+<div class="container">
+        <div style="padding-left: 12%;padding-right: 12%; padding-top: 0px !important; margin-top: -40px">
+        <div class="px-4 py-5 my-5 text-center">
+                <img class="d-block mx-auto mb-4" src="..\..\static\css\images\app-remote-mockup.png"
+                        style="border-radius: 5px; width: 35%;-webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0, 0, 0, 0.11));">
+                <h1 class="display-5 fw-bold text-body-emphasis">Streaming Remote App</h1>
+                <div class="col-lg-6 mx-auto">
+                        <p class="lead mb-4">Your computers IP address that you need to input in the app to connect your
+                                phone to to your computer is:
+                        <div style="background-color: grey; padding: 5px; width: 50%; margin: auto; border-radius: 5px; color: white"><h3>{{ip}}</h3></div>
+                        </p>
+                        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                                <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Appstore</button>
+                                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Google Play</button>
+                        </div>
+                </div>
+        </div></div>
+        <div class="card-group" style="gap: 20px">
+                <div class="card">
+                        <img src="data:image/png;base64,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"
+                                class="card-img-top" alt="...">
+                        <div class="card-body">
+                                <h5 class="card-title">Netflix</h5>
+                                <p class="card-text">Netflix is an American subscription video on-demand over-the-top
+                                        streaming service. The service primarily distributes original and acquired films
+                                        and television shows from various genres, and it is available internationally in
+                                        multiple languages.</p>
+                                <a href="/api/v1/open-external-link/netflix" class="btn btn-primary">Go to Netflix</a>
+                        </div>
+                </div>
+                <div class="card">
+                        <img src="https://i.pinimg.com/736x/6c/50/6a/6c506a9e69065a3c4f57c99d264e801b.jpg"
+                                class="card-img-top" alt="...">
+                        <div class="card-body">
+                                <h5 class="card-title">Disney+</h5>
+                                <p class="card-text">Disney+ is an American subscription video on-demand over-the-top
+                                        streaming media service owned and operated by Disney Streaming, the streaming
+                                        division of Disney Entertainment, a major business segment of the Walt Disney
+                                        Company.</p>
+                                <a href="#" class="btn btn-primary">Go to Disney+</a>
+                        </div>
+                </div>
+                <div class="card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Amazon_Prime_Video_blue_logo_1.svg/2048px-Amazon_Prime_Video_blue_logo_1.svg.png"
+                                class="card-img-top" alt="...">
+                        <div class="card-body">
+                                <h5 class="card-title">Amazon Prime</h5>
+                                <p class="card-text">Amazon Prime Video, or simply Prime Video, is an American
+                                        subscription video on-demand over-the-top streaming and rental service of Amazon
+                                        offered as a standalone service or as part of Amazon's Prime subscription. </p>
+                                <a href="#" class="btn btn-primary">Go to Amazon Prime</a>
+                        </div>
+                </div>
+        </div>
+</div>
+{% endblock %}

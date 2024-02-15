@@ -57,6 +57,38 @@ def key_command(key):
         keyboard.release(k)
     return "Success"
 
+@home.route(f"{API_PREFIX}/cursor-command/<key>")
+def cursor_command(key):
+    if key == "left":
+        mouse.move(-35, 0)
+    if key == "right":
+        mouse.move(35, 0)
+    if key == "up":
+        mouse.move(0, -35)
+    if key == "down":
+        mouse.move(0, 35)
+    if key == "click":
+        mouse.press(Button.left)
+        sleep(0.4)
+        mouse.release(Button.left)
+    return "Success"
+
+@home.route(f"{API_PREFIX}/scroll-command/<key>")
+def scroll_command(key):
+    if key == "up":
+        mouse.scroll(0, 5)
+    if key == "down":
+        mouse.scroll(0, -5)
+    return "Success"
+
+@home.route("/api/v1/netflix-search/<search_term>")
+def netflix_search(search_term):
+    """
+    Open an external link
+    """
+    webbrowser.open(f"https://www.netflix.com/search?q={search_term}", new=1, autoraise=True)
+    return "Suceess"
+
 @home.route("/")
 def homepage():
     """

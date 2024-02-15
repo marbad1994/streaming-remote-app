@@ -4,13 +4,22 @@ import {
     MaterialCommunityIcons,
   } from '@expo/vector-icons'
 import Remote from '@components/organisms/Remote';
-import { keyCommand, IpContext } from '@src/utils';
+import { keyCommand } from '@src/utils';
    
-const RemoteController = () => {
-    const {ipAddress} = React.useContext(IpContext);
-
+const RemoteController = ({setToggleView, ipAddress}) => {
     return (
         <View style={styles.remoteContainer}>
+            <TouchableOpacity
+                    style={styles.searchIcon}
+                    onPress={() => setToggleView(true)}
+                >
+                    <MaterialCommunityIcons
+                        name="movie-search"
+                        size={40}
+                        color="white"
+                        style={styles.remoteIcon}
+                    />
+                </TouchableOpacity>
             <View style={styles.remoteRow}>
                 <TouchableOpacity
                     style={styles.playButton}
@@ -36,6 +45,7 @@ const styles = StyleSheet.create({
         height: 120,
         backgroundColor: '#3e3e3e',
         marginBottom: 20,
+        marginTop: 60,
     },
     remoteIcon: {
         display: 'flex',
@@ -58,6 +68,15 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         alignItems: 'center',
         backgroundColor: '#141414',
+    },
+    searchIcon: {
+        backgroundColor: '#9d0000',
+        position: 'absolute',
+        top: 0,
+        right: 10,
+        marginBottom: 20,
+        padding: 10,
+        borderRadius: "50%",
     },
 })
 

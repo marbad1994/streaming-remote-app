@@ -22,3 +22,15 @@ export const IpContextProvider = ({ children }) => {
 export const keyCommand = (key, ipAddress) => {
     fetch(`http://${ipAddress}:4040/api/v1/key-command/${key}`)
 }
+
+export const cursorCommand = (key, ipAddress) => {
+  fetch(`http://${ipAddress}:4040/api/v1/cursor-command/${key}`)
+}
+
+export const scrollCommand = (key, ipAddress) => {
+  fetch(`http://${ipAddress}:4040/api/v1/scroll-command/${key}`)
+}
+
+export const netflixSearch = (search_term, ipAddress) => {
+  fetch(`http://${ipAddress}:4040/api/v1/netflix-search/${search_term}`)
+}

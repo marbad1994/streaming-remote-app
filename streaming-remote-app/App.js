@@ -8,7 +8,7 @@ import {
 import { IpContext, IpContextProvider } from '@src/utils';
 import IpInputAlert from '@components/screens/IpInputAlert';
 import RemoteController from '@components/screens/RemoteController';
-
+import MousePad from './src/components/screens/MousePad';
 
 const App = () => {
   return (
@@ -23,7 +23,9 @@ const App = () => {
 
 const Content = () => {
   const { ipAddress } = useContext(IpContext);
-  return ipAddress === undefined ? <IpInputAlert /> : <RemoteController />;
+  const [toggleView, setToggleView] = React.useState(false);
+
+  return ipAddress === undefined ? <IpInputAlert /> : toggleView ? <MousePad setToggleView={setToggleView} ipAddress={ipAddress} /> : <RemoteController setToggleView={setToggleView} ipAddress={ipAddress} />;
 }
 
 const styles = StyleSheet.create({

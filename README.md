@@ -11,4 +11,4 @@ The remote allows you to:
 * refresh
 * skip intro.
 
-![remote-server](https://github.com/marbad1994/streaming-remote-app/assets/39617739/3895f93a-179b-4c67-8336-682ebfd3c585)
+![remote-server](https://github.com/marbad1994/streaming-remote-app/assets/39617739/bc9152f8-210e-45f3-9061-75102a9d27c1)
